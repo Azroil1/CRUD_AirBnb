@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Flat</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/flat/new}" th:object="${flat}">
+    <label for = "area">Enter your area</label>
+    <input type="text" th:field="*{area}" id="area"/>
+    <br/>
+    <label for = "address"> Enter your address</label>
+    <input type="text" th:field="*{address}" id="address"/>
+    <br/>
+    <label for="countofrooms">Enter your count of rooms</label>
+    <input type="text" th:field="*{countsOfRooms}" id="countofrooms"/>
+    <br/>
+    <label for="house_description">Enter your description</label>
+    <input type="text" th:field="*{houseDescription}" id="house_description"/>
+    <br/>
+    <label for="name_houses">Enter your house</label>
+    <input type="text" th:field="*{nameHouses}" id="name_houses"/>
+    <br/>
+    <input type="submit"  value="Создать"/>
+
+</form>
+
+</body>
+</html>
