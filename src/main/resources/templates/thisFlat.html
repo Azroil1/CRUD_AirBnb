@@ -10,6 +10,11 @@
 <div th:text="${flat.getCountsOfRooms()}">Counts of Rooms</div>
 <div th:text="${flat.getAddress()}">Address</div>
 <div th:text="${flat.getHouseDescription()}">Description</div>
-<a href="/flat">Back</a>
+<div>
+<a href="/flat">Назад</a>
+    <form th:method="delete" th:action="@{/flat/{id}(id = ${flat.getId()})}">
+        <input type="submit" value="Удалить"/>
+    </form>
+</div>
 </body>
 </html>

@@ -32,8 +32,8 @@ public class FlatServise {
         flatRepository.save(flat);
     }
 
-    public void delete(Flat flat){
-        flatRepository.delete(flat);
+    public void delete(int id){
+        flatRepository.deleteById(id);
     }
 
 }

@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.manyanov.CRUD_AirBnb.models.Flat;
 import ru.manyanov.CRUD_AirBnb.servises.FlatServise;
 
@@ -44,6 +42,12 @@ public class FlatController {
     @PostMapping("/flat/new")
     public String create(@ModelAttribute("flat") Flat flat, BindingResult result,Model model) {
         flatServise.save(flat);
+        return "redirect:/flat";
+    }
+
+    @DeleteMapping("/flat/{id}")
+    public String delete(@PathVariable("id") int id){
+        flatServise.delete(id);
         return "redirect:/flat";
     }
 }
